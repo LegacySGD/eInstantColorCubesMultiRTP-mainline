@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Histo>
+
+	<ClientInputBuilder class="com.wagerworks.gts.client.histo.XMLHistoClientDefaultExecutionModel"/>
+
+	<ExecutionModels>
+		<BaseGame>
+			<Input>
+				<PatternSliderInput>
+					<BetPerPattern>1</BetPerPattern>
+					<PatternsBet>100</PatternsBet>
+				</PatternSliderInput>
+			</Input>
+			<Result>
+				<GameCount class="com.wagerworks.gts.histo.common.counter.SimpleCounter">
+					<Param name="appendName" value="M"/>
+				</GameCount>
+				<Sums>
+					<Wager class="com.wagerworks.gts.histo.common.sum.Sum">
+						<Param name="xpath" value="//OutcomeDetail/Settled/text()"/>
+						<Param name="xpath" value="//OutcomeDetail/Pending/text()"/>
+					</Wager>
+					<Pay_M class="com.wagerworks.gts.histo.common.sum.Sum">
+						<Param name="xpath" value="//OutcomeDetail/Payout/text()"/>
+					</Pay_M>
+				</Sums>
+				<Pays class="com.wagerworks.gts.histo.common.sum.ConcatValues">
+					<Param name="xpath" value="//OutcomeDetail/Payout/text()"/>
+				</Pays>
+			</Result>
+		</BaseGame>
+		<Rising>
+			<Input>
+			</Input>
+			<Result>
+				<FreeSpinCount class="com.wagerworks.gts.histo.common.counter.SimpleCounter">
+					<Param name="appendName" value="F"/>
+				</FreeSpinCount>
+				<Sums>
+					<Pay_F class="com.wagerworks.gts.histo.common.sum.Sum">
+						<Param name="xpath" value="//OutcomeDetail/Payout/text()"/>
+					</Pay_F>
+				</Sums>
+				<Pays class="com.wagerworks.gts.histo.common.sum.ConcatValues">
+					<Param name="xpath" value="//OutcomeDetail/Payout/text()"/>
+				</Pays>
+			</Result>
+		</Rising>
+	</ExecutionModels>
+</Histo>

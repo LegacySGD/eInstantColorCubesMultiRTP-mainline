@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation language="fr_CA">
+<phrase key="softwareId" value="ID logiciel"/>
+<phrase key="transactionId" value="ID de transaction"/>
+<phrase key="totalWins" value="Gains totaux"/>
+<phrase key="totalWager" value="Mise totale"/>
+<phrase key="outcomes" value="Résultats"/>
+<phrase key="cubeColor" value="Couleur du cube"/>
+<phrase key="numberCollected" value="Nombre de cubes trouvés"/>
+<phrase key="cumulativeTotal" value="Total cumulatif"/>
+<phrase key="prize" value="Lot"/>
+<phrase key="A" value="Mauve"/>
+<phrase key="B" value="Bleu"/>
+<phrase key="C" value="Vert"/>
+<phrase key="D" value="Jaune"/>
+<phrase key="E" value="Orangé"/>
+<phrase key="F" value="Rouge"/>
+<phrase key="starWins" value="Gains étoile"/>
+<phrase key="1" value="Étoile"/>
+<phrase key="2" value="Étoile"/>
+<phrase key="3" value="Étoile"/>
+<phrase key="X" value="Bombe"/>
+<phrase key="turn" value="Essai"/>
+<phrase key="instantWin" value="Gain instantané"/>
+</translation>

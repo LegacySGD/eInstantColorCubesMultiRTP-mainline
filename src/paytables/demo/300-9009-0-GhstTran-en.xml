@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translation language="en">
+<phrase key="softwareId" value="Software ID"/>
+<phrase key="transactionId" value="Transaction ID"/>
+<phrase key="totalWins" value="Total Wins"/>
+<phrase key="totalWager" value="Total Wager"/>
+<phrase key="outcomes" value="Outcomes"/>
+<phrase key="cubeColor" value="Cube Color"/>
+<phrase key="numberCollected" value="Number Collected"/>
+<phrase key="cumulativeTotal" value="Cumulative Total"/>
+<phrase key="prize" value="Prize"/>
+<phrase key="A" value="Purple"/>
+<phrase key="B" value="Blue"/>
+<phrase key="C" value="Green"/>
+<phrase key="D" value="Yellow"/>
+<phrase key="E" value="Orange"/>
+<phrase key="F" value="Red"/>
+<phrase key="starWins" value="Star Wins"/>
+<phrase key="1" value="Star"/>
+<phrase key="2" value="Star"/>
+<phrase key="3" value="Star"/>
+<phrase key="X" value="Bomb"/>
+<phrase key="turn" value="Turn"/>
+<phrase key="instantWin" value="Instant Win"/>
+</translation>

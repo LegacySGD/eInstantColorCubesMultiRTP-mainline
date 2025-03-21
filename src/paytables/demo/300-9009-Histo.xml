@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Histo>
+	<ClientInputBuilder class="com.wagerworks.gts.client.histo.XMLHistoClientDefaultExecutionModel"/>
+	<ExecutionModels>
+		<BaseGame>
+			<Input>
+				<PatternSliderInput>
+					<BetPerPattern>1</BetPerPattern>
+					<PatternsBet>100</PatternsBet>
+				</PatternSliderInput>
+			</Input>
+			<Result>
+				<PatternsWageredCounts class="com.wagerworks.gts.histo.common.sum.NodeListConcatValues">
+					<Param name="nodeListPath" value="//ResultData/WagerOutcome[@name='BaseGame.Lines']"/>
+					<Param name="expressionConcatValue" value="count(//ResultData/WagerOutcome[@name='BaseGame.Lines']/Wager)"/>
+					<Param name="constantConcatValue" value="MWAGER"/>
+				</PatternsWageredCounts>
+				<GameCount class="com.wagerworks.gts.histo.common.counter.SimpleCounter">
+					<Param name="appendName" value="M"/>
+				</GameCount>
+				<Sums>
+					<Wager class="com.wagerworks.gts.histo.common.sum.Sum">
+						<Param name="xpath" value="//OutcomeDetail/Settled/text()"/>
+						<Param name="xpath" value="//OutcomeDetail/Pending/text()"/>
+					</Wager>
+					<Pay_M class="com.wagerworks.gts.histo.common.sum.Sum">
+						<Param name="xpath" value="//OutcomeDetail/Payout/text()"/>
+					</Pay_M>
+				</Sums>
+				<SymbolCounts class="com.wagerworks.gts.histo.common.population.PopulationOutcomeSymbolCount">
+					<Param name="symbolInfoName" value="Symbols"/>
+					<Param name="populationInfoName" value="Reeler8x8x8x8x8"/>
+					<Param name="appendName" value="M"/>
+					<Param name="outcomeName" value="BaseGame.Reels"/>
+				</SymbolCounts>
+				<PrizeCountsLeftRight class="com.wagerworks.gts.histo.common.sum.ApolloRisingNodeListConcatValues">
+					<Param name="nodeListPath" value="//ResultData/PrizeOutcome[@name='BaseGame.Lines']/Prize"/>
+					<Param name="nodeListPath" value="//ResultData/TriggerOutcome[@name='BaseGame.WildStat']"/>
+					<Param name="nodeConcatValue" value="@payName"/>
+					<Param name="constantConcatValue" value="MLINES"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel1']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel2']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel3']/@name"/>
+				</PrizeCountsLeftRight>
+				<PrizeCountsScatter class="com.wagerworks.gts.histo.common.sum.ApolloRisingNodeListConcatValues">
+					<Param name="nodeListPath" value="//ResultData/PrizeOutcome[@name='BaseGame.Scatter']/Prize"/>
+					<Param name="nodeListPath" value="//ResultData/TriggerOutcome[@name='BaseGame.WildStat']"/>
+					<Param name="nodeConcatValue" value="@payName"/>
+					<Param name="constantConcatValue" value="MSCATTER"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel1']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel2']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel3']/@name"/>
+				</PrizeCountsScatter>
+			</Result>
+		</BaseGame>
+		<Rising>
+			<Input>
+			</Input>
+			<Result>
+				<FreeSpinCount class="com.wagerworks.gts.histo.common.counter.SimpleCounter">
+					<Param name="appendName" value="F"/>
+				</FreeSpinCount>
+				<Sums>
+					<Pay_F class="com.wagerworks.gts.histo.common.sum.Sum">
+						<Param name="xpath" value="//OutcomeDetail/Payout/text()"/>
+					</Pay_F>
+				</Sums>
+				<SymbolCounts class="com.wagerworks.gts.histo.common.population.PopulationOutcomeSymbolCount">
+					<Param name="symbolInfoName" value="Symbols"/>
+					<Param name="populationInfoName" value="Reeler8x8x8x8x8"/>
+					<Param name="appendName" value="F"/>
+					<Param name="outcomeName" value="BaseGame.Reels"/>
+				</SymbolCounts>
+				<PrizeCountsLeftRight class="com.wagerworks.gts.histo.common.sum.ApolloRisingNodeListConcatValues">
+					<Param name="nodeListPath" value="//ResultData/PrizeOutcome[@name='BaseGame.Lines']/Prize"/>
+					<Param name="nodeListPath" value="//ResultData/TriggerOutcome[@name='BaseGame.WildStat']"/>
+					<Param name="nodeConcatValue" value="@payName"/>
+					<Param name="constantConcatValue" value="FLINES"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel1']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel2']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel3']/@name"/>
+				</PrizeCountsLeftRight>
+				<PrizeCountsScatter class="com.wagerworks.gts.histo.common.sum.ApolloRisingNodeListConcatValues">
+					<Param name="nodeListPath" value="//ResultData/PrizeOutcome[@name='BaseGame.Scatter']/Prize"/>
+					<Param name="nodeListPath" value="//ResultData/TriggerOutcome[@name='BaseGame.WildStat']"/>
+					<Param name="nodeConcatValue" value="@payName"/>
+					<Param name="constantConcatValue" value="FSCATTER"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel1']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel2']/@name"/>
+					<Param name="wildConcatValue" value="/Trigger[@name='WildReel3']/@name"/>
+				</PrizeCountsScatter>
+			</Result>
+		</Rising>
+	</ExecutionModels>
+</Histo>
